@@ -5,7 +5,7 @@
                 {{ $property->title }}
             </a>
         </h5>
-        <p class="card-text">{{ $property->surface }}m² - {{ $property->city }}({{ $property->postal_code }})</p>
+        <p class="card-text">{{ $property->surface }}m² - {{ $property->city }} ({{ $property->postal_code }})</p>
         <div class="text-primary" style="font-size:1.4rem; font-weight: bold;">
             {{ number_format($property->price, thousands_separator: ' ') }}€
         </div>
