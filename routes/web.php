@@ -5,7 +5,15 @@ use App\Http\Controllers\Admin\PropertyController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
+$idRegex = '[0-9]+';
+$slugRegex = '[0-9a-z\-]+';
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/biens', [\App\Http\Controllers\PropertyController::class, 'index'])->name('property.index');;
+Route::get('/biens/{slug}-{property}', [\App\Http\Controllers\PropertyController::class, 'show'])->name('property.show')->where([
+    'property' => $idRegex,
+    'slug' => $slugRegex,
+]);
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('property', PropertyController::class)->except(['show']);

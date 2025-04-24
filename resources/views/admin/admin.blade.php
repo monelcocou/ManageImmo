@@ -13,7 +13,7 @@
 
 <nav class="navbar navbar-expand-lg bg-danger navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Manage-Immo</a>
+        <a class="navbar-brand" href="{{ route('home') }}">Manage-Immo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,9 +25,9 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a @class(['nav-link', 'active' => str_contains($route, 'property.')])
-                   aria-current="page" href="{{ route('admin.property.index') }}">Les biens</a>
+                   aria-current="page" href="{{ route('admin.property.index') }}">Gerer les biens</a>
                 <a @class(['nav-link', 'active' => str_contains($route, 'option.')])
-                   href="{{ route('admin.option.index') }}">Les options</a>
+                   href="{{ route('admin.option.index') }}">Gerer les options</a>
             </div>
         </div>
     </div>
